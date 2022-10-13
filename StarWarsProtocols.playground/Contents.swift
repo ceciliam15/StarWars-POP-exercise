@@ -74,7 +74,6 @@ protocol JediPowers {
 
 extension JediPowers {
   func introspection() -> String { return "Search your feelings." }
-  func mindControl() -> String { return "Do or do not." }
 
 }
 
@@ -85,9 +84,36 @@ protocol SithPowers{
 
 extension SithPowers{
   func forceChoke() -> Bool { return true }
+  func forceLightning() -> Bool { return true }
+}
+
+
+struct MasterYoda: JediPowers {
+  func telekinesis() -> Int { return 9 }
+  func mindControl() -> String { return "Do or do not." }
+}
+
+struct MasterObiWan: JediPowers {
+  func mindControl() -> String { return "These are not the droids you're looking for." }
+}
+
+struct MasterQuiGon: JediPowers {
+  func mindControl() -> String { return "Republic credits will do." }
+  func introspection() -> String { return "Feel, don’t think. Trust your instincts." }
+}
+
+struct DarthVader: SithPowers {
+  func lightSaberSkill() -> Int { return 9 }
+  func telekinesis() -> Int { return 8 }
   func forceLightning() -> Bool { return false }
 }
 
-protocol ForceUser: CommonPowers{}
+struct DarthSidious: SithPowers  {
+  func telekinesis() -> Int { return 7 }
+  func prescience() -> Int { return 6 }
+}
 
+struct DarthTyrannous: SithPowers {
+  func forceChoke() -> Bool { return false }
+}
 
